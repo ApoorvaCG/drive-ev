@@ -9,6 +9,8 @@ export interface VehicleSpecs {
   autopilot: boolean;
   kilometer_count: number;
   accidents: boolean;
+  color: string;
+  condition: string;
 }
 
 export interface EVDetails extends VehicleSpecs{
@@ -17,8 +19,6 @@ export interface EVDetails extends VehicleSpecs{
     model: string;
     price: number;
     year: number;
-    color: string;
-    condition: string;
     images: Array<string>;
   }
   

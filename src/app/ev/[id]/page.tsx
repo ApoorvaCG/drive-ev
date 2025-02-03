@@ -20,19 +20,22 @@ const EvDetailsPage = async ({ params }: PageProps) => {
         {/* EV images Section */}
         <ImageGallery images={ev.images} />
         {/* EV Details Section */}
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h2 className="text-2xl font-semibold">
-              {ev.brand} {ev.model} ({ev.year})
-            </h2>
-            <p className="text-lg text-gray-600">📍 {ev.location}</p>
-            <p className="mt-2 text-3xl font-bold text-blue-600">{formatPrice(ev.price)}</p>
-            <p className="text-gray-500">
-              {ev.condition} | {ev.color}
+        <div className="mt-6 grid gap-4">
+          <div className="flex w-full items-start justify-between">
+            <div>
+              <h2 className="text-2xl font-semibold">
+                {ev.brand} {ev.model} ({ev.year})
+              </h2>
+              <p className="text-xl font-medium text-gray-500">
+                {ev.location}
+              </p>
+            </div>
+            <p className="text-3xl font-bold text-blue-600">
+              {formatPrice(ev.price)}
             </p>
           </div>
 
-          <EVSpecifications ev={ev}/>
+          <EVSpecifications ev={ev} />
         </div>
       </div>
     </>
