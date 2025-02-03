@@ -1,5 +1,6 @@
-import { promises as fs } from "fs";
 import path from "path";
+import { promises as fs } from "fs";
+
 
 export async function getEvData() {
   const filePath = path.join(process.cwd(), "src", "mock", "data.json");

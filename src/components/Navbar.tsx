@@ -10,7 +10,7 @@ export default function Navbar() {
         borderBottomWidth: "1px",
         borderBottomColor: "#000",
       }}>
-      <Link href="/" className="text-lg font-semibold">
+      <Link role="navigation" href="/" className="text-lg font-semibold">
         ← Back to Listings
       </Link>
     </nav>
