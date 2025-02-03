@@ -28,10 +28,10 @@ export default async function Home({
         </div>
       </section>
       <div className="p-4 container mx-auto">
-        <section>
-          {query && <p>search results for {query}</p>}
+        <section className="text-center">
+          {query && <p className="text-2xl">search results for &ldquo;<strong>{query}</strong>&ldquo;</p>}
           {query?.length && !evList.length ? (
-            <p>No results found!</p>
+            <p className="text-xl py-6">No results found!</p>
           ) : (
             <EvGridContainer evData={evList} />
           )}

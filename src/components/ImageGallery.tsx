@@ -38,7 +38,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
         <div className="relative">
           <button
             onClick={() => scroll("left")}
-            className="absolute text-white font-extrabold left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-black/50 hover:bg-black/75 rounded-full"
+            className="absolute text-white font-extrabold left-0 top-1/2 -translate-y-1/2 z-10 p-4 bg-black/50 hover:bg-black/75 rounded-full"
             aria-label="Scroll left"
           >
             {`<`}
@@ -72,7 +72,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
 
           <button
             onClick={() => scroll("right")}
-            className="absolute text-white font-extrabold right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-black/50 hover:bg-black/75 rounded-full"
+            className="absolute text-white font-extrabold right-0 top-1/2 -translate-y-1/2 z-10 p-4 bg-black/50 hover:bg-black/75 rounded-full"
             aria-label="Scroll right"
           >
             {`>`}

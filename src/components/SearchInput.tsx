@@ -30,7 +30,7 @@ const SearchInput = ({ searchTerm }: SearchInputProps) => {
             onClick={resetInput}
             className="ml-4 bg-yellow-500 text-black py-2 px-6 rounded-lg"
           >
-            <Link href={"/"}>clear</Link>
+            <Link href={"/"}>Clear</Link>
           </button>
         ) : (
           <button
