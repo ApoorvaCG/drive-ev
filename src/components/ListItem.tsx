@@ -1,10 +1,11 @@
-'use client'
+"use client";
 import { formatPrice } from "@/scripts";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { EVDetails } from "./types";
 import { useSearchParams } from "next/navigation";
+import { EV_CURRENT_STATUS } from "./constants";
 
 const ListItem = ({ item }: { item: EVDetails }) => {
   // Preserving filters & pagination in the URL for navigations
@@ -25,28 +26,26 @@ const ListItem = ({ item }: { item: EVDetails }) => {
           />
         </div>
         <div className="py-2 flex justify-between">
-          <p className="font-bold text-xl">
+          <p className="font-bold text-lg">
             {item.brand} - {item.model}
           </p>
-          {item.condition === "Used" ? (
-            <div className="rounded-lg self-center bg-blue-200 text-sm text-blue-900 px-2 py-1">
-              {item.condition}
-            </div>
-          ) : (
-            <div className="rounded-lg self-center bg-lime-200 text-sm text-lime-900 px-2 py-1">
-              {item.condition}
-            </div>
-          )}
+          <div
+            className={`rounded-lg self-center text-sm px-2 ${
+              item.condition === EV_CURRENT_STATUS.USED ? "used-condition" : "new-condition"
+            }`}
+          >
+            {item.condition}
+          </div>
         </div>
 
         <div className="flex flex-col gap-2 text-slate-500">
-          <div className="flex gap-2">
-            <p className="text-slate-900">{item.year} </p>•
-            <p className="text-slate-900">{item.seats} Seater</p>•
-            <p className="text-slate-900">{item.color} </p>
+          <div className="flex gap-1 text-slate-900">
+            <p>{item.year} </p>•
+            <p>{item.seats} Seater</p>•
+            <p>{item.color} </p>
           </div>
           <div className="flex justify-between">
-            <p className="font-medium text-2xl text-black">
+            <p className="font-medium text-xl text-black">
               {formatPrice(item.price)}
             </p>
             <button className="rounded-xl border-[1px]  text-small text-slate-900 px-2">

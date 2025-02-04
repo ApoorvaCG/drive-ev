@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { EVListData } from "@/components/types";
+import { SORTING_VALUE } from "../constants";
 
 export const useEVFilterSort = (
   evData: EVListData,
@@ -21,7 +22,7 @@ export const useEVFilterSort = (
     // Apply sorting
     if (sortValue) {
       filteredData = filteredData.sort((a, b) =>
-        sortValue === "asc" ? a.price - b.price : b.price - a.price
+        sortValue === SORTING_VALUE.ASCEND ? a.price - b.price : b.price - a.price
       );
     }
 

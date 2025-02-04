@@ -12,3 +12,13 @@ export const EV_SORTING_OPTIONS = [
 
 // Number of list items to display in single page
 export const ITEMS_PER_PAGE = 10;
+
+export enum EV_CURRENT_STATUS {
+  USED = "Used",
+  NEW = "New",
+}
+
+export enum SORTING_VALUE {
+  ASCEND = "asc",
+  DESCEND = "desc",
+}

@@ -13,11 +13,13 @@ const Pagination = ({
   const buttonClasses =
     "bg-indigo-500 font-semibold text-white py-2 px-4 hover:bg-indigo-600 disabled:bg-gray-300";
 
+  const FIRST_PAGE = 1;
+
   return (
     <div className="flex justify-center gap-1 mt-4">
       <button
         onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage === 1}
+        disabled={currentPage === FIRST_PAGE}
         className={`${buttonClasses} rounded-l`}
       >
         Previous
