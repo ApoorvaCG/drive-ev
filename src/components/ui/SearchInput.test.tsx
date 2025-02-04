@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import SearchInput from "@/components/SearchInput";
+import SearchInput from "@/components/ui/SearchInput";
 
 describe("SearchInput Component", () => {
   it("renders the input field and browse EVs button when searchTerm is not provided", () => {

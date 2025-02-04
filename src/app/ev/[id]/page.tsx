@@ -1,9 +1,9 @@
 import React from "react";
-import ImageGallery from "@/components/ImageGallery";
+import ImageGallery from "@/components/ui/ImageGallery";
 import Navbar from "@/components/Navbar";
 import { getEvById } from "@/mock/getEvData";
 import { formatPrice } from "@/scripts";
-import EVSpecifications from "@/components/EvSpecifications";
+import EVSpecifications from "@/components/ev/EvSpecifications";
 
 interface PageProps {
   params: Promise<{ id: string }>;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { EVListData } from "@/components/types";
-import { SORTING_VALUE } from "../constants";
+import { EVListData } from "@/types";
+import { SORTING_VALUE } from "@/constants";
 
 export const useEVFilterSort = (
   evData: EVListData,

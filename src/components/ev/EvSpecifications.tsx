@@ -1,4 +1,4 @@
-import { VehicleSpecs } from "./types";
+import { VehicleSpecs } from "@/types";
 
 const EVSpecifications = ({ ev }: { ev: VehicleSpecs }) => {
   const specs = [

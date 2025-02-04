@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { EVListData } from "../types";
+import { EVListData } from "@/types";
 
 export const usePagination = (
   pageNumber: number,

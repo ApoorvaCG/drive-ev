@@ -3,9 +3,9 @@ import { formatPrice } from "@/scripts";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import { EVDetails } from "./types";
+import { EVDetails } from "@/types";
 import { useSearchParams } from "next/navigation";
-import { EV_CURRENT_STATUS } from "./constants";
+import { EV_CURRENT_STATUS } from "@/constants";
 
 const ListItem = ({ item }: { item: EVDetails }) => {
   // Preserving filters & pagination in the URL for navigations

@@ -1,7 +1,7 @@
 import { getEvData, getFilteredEvs } from "@/mock/getEvData";
 import React from "react";
-import SearchInput from "@/components/SearchInput";
-import EvGridContainer from "@/components/EvGridContainer";
+import SearchInput from "@/components/ui/SearchInput";
+import EvGridContainer from "@/components/ev/EvGridContainer";
 
 export default async function Home({
   searchParams,

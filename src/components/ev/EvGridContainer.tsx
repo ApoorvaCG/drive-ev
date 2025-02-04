@@ -1,16 +1,16 @@
 "use client";
 import React from "react";
 import ListItem from "./ListItem";
-import DropDown from "./DropDown";
-import Pagination from "@/components/Pagination";
-import { EVDetails, EVListData } from "./types";
-import { useEVFilterSort } from "./hooks/useFilterSort";
+import DropDown from "../ui/DropDown";
+import Pagination from "@/components/ui/Pagination";
+import { EVDetails, EVListData } from "@/types";
+import { useEVFilterSort } from "../hooks/useFilterSort";
 import { usePagination } from "@/components/hooks/usePagination";
 import {
   EV_FILTER_OPTIONS,
   EV_SORTING_OPTIONS,
   ITEMS_PER_PAGE,
-} from "./constants";
+} from "@/constants";
 import { useURLQueryState } from "@/components/hooks/useURLQueryState";
 
 const EvGridContainer = ({ evData }: { evData: EVListData }) => {

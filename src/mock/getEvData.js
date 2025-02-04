@@ -6,6 +6,7 @@ export async function getEvData() {
   const filePath = path.join(process.cwd(), "src", "mock", "data.json");
   const file = await fs.readFile(filePath, "utf8");
   const data = JSON.parse(file);
+  /* adding id's for the json data to maintain uniqueness for listing and navigations */
   const dataWithIds = data.data?.map((item, index) => ({
     id: index + 1,
     ...item,
