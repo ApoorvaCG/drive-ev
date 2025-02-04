@@ -1,5 +1,4 @@
-'use client' // Error boundaries must be Client Components
- 
+'use client'
 import { useEffect } from 'react'
  
 export default function Error({
@@ -10,16 +9,14 @@ export default function Error({
   reset: () => void
 }) {
   useEffect(() => {
-    // Log the error to an error reporting service
     console.error(error)
   }, [error])
  
   return (
-    <div>
+    <div className='flex items-center justify-center flex-col h-screen w-full'>
       <h2>Something went wrong!</h2>
       <button
         onClick={
-          // Attempt to recover by trying to re-render the segment
           () => reset()
         }
       >
