@@ -7,7 +7,7 @@ interface ImageGalleryProps {
 }
 
 const ImageGallery = ({ images }: ImageGalleryProps) => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: string) => {

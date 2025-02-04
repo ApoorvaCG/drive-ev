@@ -23,13 +23,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - **Clear Filters Button**
   - Resets all filters, sorting, and pagination
 - **Docker Support**
-  - Includes a `Dockerfile` for easy containerized setup
+  - Includes a `Dockerfile` for easy containerized setup and run the project
 
-## 🛠 Project Setup
+## 1. Project Setup
 
 Clone or fork the repository to get started
 
-### 2️⃣ Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 npm install
@@ -37,7 +37,7 @@ npm install
 yarn install
 ```
 
-### 3️⃣ Run the Development Server
+### 3. Run the Development Server
 
 ```bash
 npm run dev
@@ -45,6 +45,19 @@ npm run dev
 yarn dev
 ```
 
+- The app will be available at `http://localhost:3000`
+
+### 4. Build Docker Image
+
+```bash
+docker build -t drive-ev
+```
+
+Once build is successful, run container
+
+```bash
+docker run -p 3000:3000 drive-ev
+```
 - The app will be available at `http://localhost:3000`
 
 
