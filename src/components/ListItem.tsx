@@ -4,8 +4,14 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { EVDetails } from "./types";
+import { useSearchParams } from "next/navigation";
 
 const ListItem = ({ item }: { item: EVDetails }) => {
+  // Preserving filters & pagination in the URL for navigations
+  const searchParams = useSearchParams();
+  const queryParams = searchParams.toString();
+  const detailsUrl = `/ev/${item.id}${queryParams ? `?${queryParams}` : ""}`;
+
   return (
     <>
       <li className="bg-white border-[1px] border-gray py-5 px-5 rounded-2xl shadow-200 hover:border-primary transition-all duration-500 hover:shadow-300 hover:bg-primary-100">
@@ -44,7 +50,7 @@ const ListItem = ({ item }: { item: EVDetails }) => {
               {formatPrice(item.price)}
             </p>
             <button className="rounded-xl border-[1px]  text-small text-slate-900 px-2">
-              <Link href={`/ev/${item.id}`}>Details</Link>
+              <Link href={detailsUrl}>Details</Link>
             </button>
           </div>
         </div>

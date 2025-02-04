@@ -1,11 +1,12 @@
-
 import { useState, useEffect } from "react";
-import { EVListData, SortOrder } from "@/components/types";
+import { EVListData } from "@/components/types";
 
-export const useEVFilterSort = (evData: EVListData) => {
+export const useEVFilterSort = (
+  evData: EVListData,
+  filterValue: string,
+  sortValue: string
+) => {
   const [sortedData, setSortedData] = useState(evData);
-  const [filterValue, setFilterValue] = useState<string | null>(null);
-  const [sortOrder, setSortOrder] = useState<SortOrder>("");
 
   useEffect(() => {
     let filteredData = evData;
@@ -18,20 +19,14 @@ export const useEVFilterSort = (evData: EVListData) => {
     }
 
     // Apply sorting
-    if (sortOrder) {
+    if (sortValue) {
       filteredData = filteredData.sort((a, b) =>
-        sortOrder === "asc" ? a.price - b.price : b.price - a.price
+        sortValue === "asc" ? a.price - b.price : b.price - a.price
       );
     }
 
     setSortedData([...filteredData]);
-  }, [filterValue, sortOrder, evData]);
+  }, [evData, filterValue, sortValue]);
 
-  return {
-    sortedData,
-    filterValue,
-    setFilterValue,
-    sortOrder,
-    setSortOrder,
-  };
+  return { sortedData };
 };
