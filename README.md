@@ -25,11 +25,16 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - **Docker Support**
   - Includes a `Dockerfile` for easy containerized setup and run the project
 
-## 1. Project Setup
+**Project Setup with Docker Image**
 
 Clone or fork the repository to get started
+```bash
+docker run -it -p 3000:3000 ghcr.io/apoorvacg/drive-ev:latest
+```
 
-### 2. Install Dependencies
+**Project Setup with dependencies**
+
+#### 1.Install dependencies
 
 ```bash
 npm install
@@ -37,7 +42,7 @@ npm install
 yarn install
 ```
 
-### 3. Run the Development Server
+#### 2. Run the Development Server
 
 ```bash
 npm run dev
@@ -45,21 +50,19 @@ npm run dev
 yarn dev
 ```
 
-- The app will be available at `http://localhost:3000`
+**Project Setup with Build Docker Container**
 
-### 4. Build Docker Image
-
+#### 1. Build the Image
 ```bash
 docker build -t drive-ev
 ```
 
-Once build is successful, run container
-
+#### 2. Run the Container
 ```bash
 docker run -p 3000:3000 drive-ev
 ```
-- The app will be available at `http://localhost:3000`
 
+- The app will be available at `http://localhost:3000`
 
 ## Running Tests
 
