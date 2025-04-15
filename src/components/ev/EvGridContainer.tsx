@@ -12,6 +12,10 @@ import {
   ITEMS_PER_PAGE,
 } from "@/constants";
 import { useURLQueryState } from "@/components/hooks/useURLQueryState";
+import { useModal } from "../hooks/useModal";
+import Modal from "../ui/Modal";
+import Form from "../ui/Form";
+import { useCreateSubmission } from "../hooks/useCreateSubmission";
 
 const EvGridContainer = ({ evData }: { evData: EVListData }) => {
   const { state, updateState } = useURLQueryState();
@@ -21,6 +25,8 @@ const EvGridContainer = ({ evData }: { evData: EVListData }) => {
     ITEMS_PER_PAGE,
     sortedData
   );
+  const { isOpen, openModal, closeModal } = useModal();
+  const { handleCreate, isLoading, isError, isSuccess } = useCreateSubmission();
 
   const handleClearFilters = () => {
     updateState({ filter: "", sort: "", page: 1 });
@@ -76,6 +82,22 @@ const EvGridContainer = ({ evData }: { evData: EVListData }) => {
       ) : (
         <></>
       )}
+
+      <Modal isOpen={isOpen} onClose={closeModal}>
+        <Form
+          onFormAction={handleCreate}
+          closeModal={closeModal}
+          isLoading={isLoading}
+          isError={isError}
+          isSuccess={isSuccess}
+        />
+      </Modal>
+      <button
+        onClick={openModal}
+        className="m-8 rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 disabled:bg-blue-300"
+      >
+        Submit Query
+      </button>
     </div>
   );
 };
