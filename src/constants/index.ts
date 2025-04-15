@@ -22,25 +22,3 @@ export enum SORTING_VALUE {
   ASCEND = "asc",
   DESCEND = "desc",
 }
-
-export const FORM_FIELDS = [
-  {
-    name: "title",
-    label: "Enquiry Title",
-    placeholder: "Enter your enquiry",
-    validation: {
-      required: "This field is required",
-      minLength: { value: 3, message: "Title must be at least 3 characters" },
-      maxLength: { value: 25, message: "Max. of 25 characters allowed" },
-    },
-  },
-  {
-    name: "description",
-    label: "Description",
-    placeholder: "Explain your request",
-    required: "Description is required",
-    validation: {
-      maxLength: { value: 100, message: "Max. of 100 characters allowed" },
-    },
-  },
-];
